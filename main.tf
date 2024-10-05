@@ -92,14 +92,14 @@ resource "aws_s3_bucket" "six" {
 }
 
 resource "aws_iam_user" "seven" {
-for_each = toset(var.user_names)
+for_each = var.user_names
 name = each.value
 }
 
 variable "user_names" {
 description = "*"
-type = list(string)
-default = ["user1", "user2", "user3", "user4"]
+type = set(string)
+default = ["user5", "user2", "user3", "user4"]
 }
 
 resource "aws_ebs_volume" "eight" {
