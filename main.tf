@@ -92,7 +92,7 @@ resource "aws_s3_bucket" "six" {
 }
 
 resource "aws_iam_user" "seven" {
-for_each = var.user_names
+for_each = toset[var.user_names]
 name = each.value
 }
 
