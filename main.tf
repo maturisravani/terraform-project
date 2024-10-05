@@ -98,7 +98,7 @@ name = each.value
 
 variable "user_names" {
 description = "*"
-type = set(string)
+type = list(string)
 default = ["user1", "user2", "user3", "user4"]
 }
 
